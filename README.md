@@ -1,5 +1,7 @@
 📝 깃 가이드
+
 📤 프로젝트 열기
+
 프로젝트를 하나 생성하고 로컬과 원격 저장소를 연결해줍니다
 git init // 저장소 생성
 git remote -v https://github.com/HIUMC/UMC-5th-Web-Study.git //저장소 내 컴퓨터 <-> 원격 연결
