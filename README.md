@@ -1,21 +1,22 @@
-📝 깃 가이드
+## 📝 깃 가이드 
 
-📤 프로젝트 열기
 
-프로젝트를 하나 생성하고 로컬과 원격 저장소를 연결해줍니다
-git init // 저장소 생성
-git remote -v https://github.com/HIUMC/UMC-5th-Web-Study.git //저장소 내 컴퓨터 <-> 원격 연결
-git pull origin main
-terminal에서 자신의 branch로 checkout을 해주세요
-git checkout origin [본인 github 아이디 or 영문이름] //브랜치 개념 모른다면 구글링. 자신만의 공간을 만든다고 생각하시면 됩니다.
-작업은 해당 본인 branch에서만 진행해주세요 (❌main branch❌)
-git branch : 현재 branch 확인
-위의 방식이 어렵다면 깃 Clone 하는 방법을 검색해보기 (로컬과 원격 저장소를 연결할 수 있는 방법, 처음이라면 이 방법을 추천드립니다!)
+### 📤 프로젝트 열기
 
-🏡 작업공간 생성
-UMC-5th-Web-Study (프로젝트 루트 디렉토리)
-본인 github 아이디명의 디렉토리 (본인 github 아이디 or 영문이름으로 설정해주세요!)
-해당 주차 혹은 워크북명 (ex. week1, platform)
+* 프로젝트를 하나 생성하고 로컬과 원격 저장소를 연결해줍니다
+* ```git init``` // 저장소 생성
+* ```git remote -v https://github.com/HIUMC/UMC-5th-Web-Study.git```  //저장소 내 컴퓨터 <-> 원격 연결
+* ```git pull origin main```
+* terminal에서 자신의 branch로 checkout을 해주세요
+    * ```git checkout origin [본인 github 아이디]```  //브랜치 개념 모른다면 구글링. 자신만의 공간을 만든다고 생각하시면 됩니다.
+* 작업은 해당 **본인 branch에서만** 진행해주세요 **(~~❌main branch❌~~)**
+    * ```git branch``` : 현재 branch 확인
+
+### 🏡 작업공간 생성
+* UMC-5th-Web-Study (프로젝트 루트 디렉토리)
+    * 본인 github 아이디명의 디렉토리 (본인 github 아이디로 설정해주세요!)
+        * 해당 주차 혹은 워크북명 (ex. week1, platform)
+          
 본인 github 아이디명의 디렉토리부터 만들고 시작하시면 됩니다! 😊 
 
 
@@ -57,4 +58,4 @@ UMC-5th-Web-Study (프로젝트 루트 디렉토리)
 
 
 ### ⏰ 과제 제출 마감 기한 
-다음주 스터디 시작 전까지!
+**다음주 스터디 시작 전까지!**
