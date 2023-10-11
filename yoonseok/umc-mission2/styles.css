@@ -1,0 +1,79 @@
+.background-container {
+    background-image: url('umc1.svg'); 
+    background-size: cover;
+    background-repeat: no-repeat; 
+    
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.transparent-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba( 255, 255, 255, 0.5 ); 
+    width: 50%;
+    height: 70%;
+    background-color: rgb( 148, 149, 155 ); 
+    border-radius: 30px;
+    opacity: 0.7;
+
+}
+
+h3 {
+    font-size: 50px;
+    margin: 30px 0px 0px 0px;
+    padding: 0px 0px 10px 0px;
+    width: 60%;
+    text-align: center;
+    border-bottom: 0.7px solid #fff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+label{
+    float: left;
+}
+
+.form_data {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5%;
+    margin-left: 100px;
+}   
+
+
+label {
+    color: #ffffff;
+}
+
+input{
+    height: 25px;
+    width: 70%;
+    border-radius: 5px;
+    opacity: 0.3;
+    border-style: solid;
+    border-color: rgb(255, 255, 255); 
+}
+button{
+    display: flex;
+    font-size: 15px;
+    width: 287px;
+    height: 51px;
+    border-radius: 5px;
+    margin-top: 5%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(114, 115, 121); 
+    border-color: rgba(255, 255, 255,0.3); 
+}

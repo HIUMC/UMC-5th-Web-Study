@@ -1,0 +1,87 @@
+/* 전체 페이지 스타일링 */
+body {
+    background-image: url('umc1.svg');
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* 로그인 컨테이너 스타일링 */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    opacity: 0.5;
+    width: 40%;
+    height: 40%;
+    padding: 3%;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    justify-content: center;
+   
+}
+
+.login {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:40%;
+    width: 100%;
+}
+.form-group {
+    width: 50%;
+    height: 40%;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(235, 233, 233);
+    opacity: 0.4;
+    border-bottom: solid 1px #ccc;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(235, 233, 233);
+    opacity: 0.4;
+    
+}
+
+button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height:40%;
+    width: 50%;
+    background-color: #5a5a5a;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    padding : 10px;
+    margin-top: 10px;
+}
+/*     
+    color: #fff;
+    border: none;
+    
+    transition: background-color 0.3s; */
+button:hover {
+    background-color: #0056b3;
+}
