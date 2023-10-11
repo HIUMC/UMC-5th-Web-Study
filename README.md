@@ -4,15 +4,24 @@
 ### 📤 프로젝트 열기
 
 * 프로젝트를 하나 생성하고 로컬과 원격 저장소를 연결해줍니다
-* ```git init``` // 저장소 생성
-* ```git remote -v https://github.com/HIUMC/UMC-5th-Web-Study.git```  //저장소 내 컴퓨터 <-> 원격 연결
+
+* ```git clone https://github.com/HIUMC/UMC-5th-Web-Study.git```  //저장소 내 컴퓨터 <-> 원격 연결
 * ```git pull origin main```
 * 자신의 브랜치를 만들어주세요
-*```git branch [본인의 깃허브 아이디]```
 * terminal에서 자신의 branch로 checkout을 해주세요
-    * ```git checkout [본인 github 아이디]```  //브랜치 개념 모른다면 구글링. 자신만의 공간을 만든다고 생각하시면 됩니다.
+* 브랜치를 만들고 한번에 이동하는 명령어 하단에 있음. 
+*```git checkout -b [본인의 github 아이디]```  //브랜치 개념 모른다면 구글링. 자신만의 공간을 만든다고 생각하시면 됩니다.
 * 작업은 해당 **본인 branch에서만** 진행해주세요 **(~~❌main branch❌~~)**
     * ```git branch``` : 현재 branch 확인
+* ```git init``` // 저장소 생성
+* 자신의 이름으로 폴더를 만들고 그곳에 자신의 주차별 미션을 올려주세요. 그 다음
+* ```git add .``` // git에 추가
+* ```git commit -m "메세지 아무거나"``` // 커밋하기
+* ```git push origin [본인의 github 아이디]``` // 저장소 생성
+
+* github 들어가서 pull request 에서 merge 까지 완료하면 끝~!~!
+
+* 하다가 모르는거 있으면 파트장 윤강현 또는 김형석 에게 카톡으로 물어봐주세요~!
 
 ### 🏡 작업공간 생성
 * UMC-5th-Web-Study (프로젝트 루트 디렉토리)
