@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('file:///Users/seojooyoung/Desktop/UMC.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    align-items: left;
+    width: 50%;
+    opacity: 0.7;
+    overflow: auto;
+}
+
+h1 {
+    margin-top: 15px;
+}
+
+.divider {
+    width: 50%;
+    margin-top: 5px; /* 수직 중앙 정렬을 위해 자동 여백 설정 */
+    margin-bottom: 20px;
+    margin: 5px auto;
+    border-bottom: 1px solid #ccc; /* 구분선 스타일 및 색상 설정 */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    font-size: medium;
+}
+
+.input-container {
+    margin: 10px 0;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+
+}
+
+button {
+    padding: 10px 20px;
+    background-color: gray;
+    color: #fff;
+    font-size: medium;
+    border: none;
+    border-radius: 10px;
+    width: 34%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+button:hover {
+    background-color: black;
+    opacity: 1;
+}
