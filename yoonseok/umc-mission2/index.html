@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인 화면</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="background-container">
+        <div class="transparent-div">
+            <h3> 회원 가입</h3>
+            <form name="form1">
+                <div class="form_data">
+                    <label>이름</label>
+                    <input type="text" name="name" id="name" size="50">
+                    <span id="nameError" class="error"></span>
+                </div>
+                <div class="form_data">
+                    <label>닉네임</label>
+                    <input type="text" name="nickname" id="nickname" size="50" maxlength="5">
+                    <span id="nicknameError" class="error"></span>
+                </div>
+                <div class="form_data">
+                    <label>이메일</label>
+                    <input type="email" name="email" id="email" size="50">
+                    <span id="emailError" class="error"></span>
+                </div>
+                <div class="form_data">
+                    <label>비밀번호 </label>
+                    <input type="password" name="password" id="password" size="50">
+                    <span id="passwordError" class="error"></span>
+                </div>
+                <div class="form_data">
+                    <label>비밀번호확인</label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" size="50">
+                    <span id="confirmPasswordError" class="error"></span>
+                </div>
+                <button type="button" id="joinButton">가입하기</button>
+            </form>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
