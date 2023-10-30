@@ -7,10 +7,9 @@
 
 * ```git clone https://github.com/HIUMC/UMC-5th-Web-Study.git```  //저장소 내 컴퓨터 <-> 원격 연결
 * ```git pull origin main```
-* 자신의 브랜치를 만들어주세요
-* terminal에서 자신의 branch로 checkout을 해주세요
-* 브랜치를 만들고 한번에 이동하는 명령어 하단에 있음. 
-*```git checkout -b [본인의 github 아이디]```  //브랜치 개념 모른다면 구글링. 자신만의 공간을 만든다고 생각하시면 됩니다.
+* 자신의 브랜치를 만들어주고 자신의 branch로 이동 해주세요 //브랜치 개념 모른다면 구글링. 자신만의 공간을 만든다고 생각하시면 됩니다.
+       브랜치를 만들고 한번에 이동하는 명령어 하단에 있음. 
+*```git checkout -b [본인의 github 아이디]```  
 * 작업은 해당 **본인 branch에서만** 진행해주세요 **(~~❌main branch❌~~)**
     * ```git branch``` : 현재 branch 확인
 * ```git init``` // 저장소 생성
