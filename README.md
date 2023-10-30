@@ -1,9 +1,7 @@
 ## 📝 깃 가이드 
 
 
-### 📤 프로젝트 열기
-
-1. 
+### 1. 📤 프로젝트 열기
 * 프로젝트를 하나 생성하고 로컬과 원격 저장소를 연결해줍니다
 
 * ```git clone https://github.com/HIUMC/UMC-5th-Web-Study.git```  //저장소 내 컴퓨터 <-> 원격 연결
@@ -24,8 +22,7 @@
 본인 github 아이디명의 디렉토리부터 만들고 시작하시면 됩니다! 😊 
 
 
-2.
-### 💾 중간 중간 commit 하기
+### 2. 💾 중간 중간 commit 하기
 * 파트 별로 작업을 끝냈거나 더 작은 단위로 작업을 끝낼 때 마다 commit을 해 주는 게 좋아요
 * ❗commit convention ❗️
     * **Feat**: 새로운 기능 추가
@@ -52,8 +49,7 @@
     * [참고] https://gist.github.com/ihoneymon/652be052a0727ad59601#24-코드
 
 
-3.
-### 🙌🏻 Github 레포지토리에 push하기
+### 3. 🙌🏻 Github 레포지토리에 push하기
 
 * 해당 주차 과제를 모두 마쳤다면, 프로젝트 변경 사항을 remote repository(github repository)에 push 합니다
     * ```git push origin [본인 github 아이디 브랜치 명]``` : git에 등록되어 있는 origin(github repository)에 있는 자신의 branch로 프로젝트의 변경 사항을 반영합니다
