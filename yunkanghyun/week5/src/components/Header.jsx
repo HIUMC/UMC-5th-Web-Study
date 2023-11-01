@@ -1,10 +1,16 @@
 import { useNavigate, Link } from "react-router-dom";
+import React, { useState } from 'react';
 import "./Header.css";
 const Header = () => {
 
   const navigate = useNavigate();
   const goToHome = () => {
     navigate("/");
+  };
+
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const handleClick = () => {
+    setIsLoggedIn(!isLoggedIn);
   };
 
   return (
@@ -17,12 +23,17 @@ const Header = () => {
           onClick={goToHome}/>
         <div className="letter-frame">
           <div className="movie"><Link to="/movie" style={{ textDecoration: "none" , color:"white"}}>영화</Link></div>
-          <div className="tv">TV 프로그램</div>
-          <div className="person">인물</div>
+          <div className="tv"><Link to="/tv" style={{ textDecoration: "none" , color:"white"}}>TV 프로그램</Link></div>
+          <div className="person"><Link to="/person" style={{ textDecoration: "none" , color:"white"}}>인물</Link></div>
         </div>
-        {/* <button onClick={this.handleClick}>
-          {this.state.isLoggedIn ? '로그인' : '로그아웃'}
-        </button> */}
+
+        <button className="login-button" onClick={handleClick}>
+          {isLoggedIn ? '로그인' : '로그아웃'}
+        </button> 
+        <div style={{color:"white"}}>
+          {isLoggedIn ? '로그인 해주세요!' : '환영합니다'}
+        </div>
+
       </div>
     </div>
   );
