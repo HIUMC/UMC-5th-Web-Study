@@ -1,0 +1,129 @@
+input{
+	background:rgba(189, 199, 218, 0.489);
+	border:none;
+	text-align: left;
+  size:25;
+} 
+
+body{
+	background-image: url('UMC 뭔가 간지나는 배경1 2.svg');
+	justify-content: center;
+	align-items: center;
+}
+.my_div {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit:cover;
+}
+#Joinbox{
+  background-color: rgba(228, 243, 255, 0.559);
+  width: 600px;
+  height: 800px;
+  text-align: center;
+  border-radius:15px;
+  position: absolute;
+  margin:70px 600px 100px 600px; /*시계방향 상우하좌*/
+  
+}
+hr{
+  width: 300px;
+  height: 0.5px;
+  color: white;
+  margin-bottom: 20px;
+}
+.hide {
+    display: none;
+    }
+.submit-box {
+    align-self: flex-start;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-align: left;
+  
+  }
+.joinButton{
+  width:40%;
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  color: white;
+  font-weight:bold;
+  background-color:rgba(104, 122, 137, 0.74);
+  outline:none;
+  text-align: center;
+  font-size: 15pt;
+  font-weight: 100;
+  cursor: pointer;
+  
+}
+
+
+#username{ 
+  width:40%;
+  border: 1px solid #ffffff;
+  padding: 15px 0px 7px 7px;
+  border-radius:5px;
+  margin-bottom: 2px;
+}
+
+#nickname{ 
+    width:40%;
+    border: 1px solid #ffffff;
+    padding: 15px 0px 7px 7px;
+    border-radius:5px;
+    margin-bottom: 2px;
+}
+#email{ 
+    width:40%;
+    border: 1px solid #ffffff;
+    padding: 15px 0px 7px 7px;
+    border-radius:5px;
+    margin-bottom: 2px;
+}
+#password{ 
+    width:40%;
+    border: 1px solid #ffffff;
+    padding: 15px 0px 7px 7px;
+    border-radius:5px;
+    margin-bottom: 2px;
+  }
+#password-check{ 
+    width:40%;
+    border: 1px solid #ffffff;
+    padding: 15px 0px 7px 7px;
+    border-radius:5px;
+    margin-bottom: 2px;
+  }
+  .modal {
+    position: absolute;
+
+    width: 400px;
+    height: 200px;
+    background: white;
+    border: none;
+    border-radius:20px;
+    text-align: center;
+    top:35%;
+    left: 20%; 
+  }
+  .modal__title {
+    text-align: center;
+    margin: 60px;
+  }
+  .modal__context{
+    text-align: center;
+    margin: -50px;
+  }
+  .closebutton{
+    background-color: whitesmoke;
+    border: 1px solid #a59c9c;
+    border-radius:4px;
+    
+  }
+  .modal__actions {
+    position: relative;
+    top: 80px;
+    left: 150px;
+  }
