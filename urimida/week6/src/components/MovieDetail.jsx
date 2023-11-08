@@ -4,7 +4,9 @@ const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
 const MovieDetail = () => {
 
   const location = useLocation();
-
+  const queryParams = new URLSearchParams(location.search);
+  const query = queryParams.get("query");
+  const poster_path = queryParams.get("poster_path");
     //이부분에 코드 작성. 코드 테스트 할때는 아래 주석 풀고 실행해보세요.
     //아래의 주석처리된 부분의 query와 poster_path를 파라미터를 통해 가져와야 함.
     //코드는 두줄이면 됨. 쿼리를 어떻게 가져오는지에 대한 중요한 실습이니 꼭 생각 해보기.
