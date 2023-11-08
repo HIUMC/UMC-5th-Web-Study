@@ -1,0 +1,79 @@
+input{
+	background:transparent;
+	border:none;
+	text-align: left;
+  size:25;
+} 
+
+body{
+	background-image: url('UMC 뭔가 간지나는 배경1 2.svg');
+	justify-content: center;
+	align-items: center;
+}
+.my_div {
+  width: 100%;
+  height: 100%;
+  border: none;
+  object-fit:cover;
+}
+.login{
+  background-color: rgba(163, 163, 163, 0.824);
+  width: 700px;
+  height: 400px;
+  text-align: center;
+  border-radius:15px;
+  position: absolute;
+  margin:200px 500px 200px 500px; /*시계방향 상우하좌*/
+  
+}
+hr{
+  width: 40%;
+  height: 0.5px;
+  color: white;
+}
+
+#login-form {
+  align-self: flex-start;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+
+}
+#login-button{
+  width:40%;
+  padding:15px;
+  border:none;
+  border-radius:10px;
+  color: white;
+  font-weight:bold;
+  background-color:rgba(0, 0, 0, 0.74);
+  cursor:pointer;
+  outline:none;
+  text-align: center;
+  font-size: 15pt;
+  font-weight: 100;
+}
+#input-id-pw{ 
+  width:40%;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  margin-bottom: 12px;
+  outline: none;
+  padding: 0px 0px 7px 7px;
+  
+}
+#input-id-pw::placeholder{
+  color:#ffffff;
+}
+
+#join-in{
+  cursor:pointer;
+  margin-right: 35px;
+
+}
+#finding{
+  cursor:pointer;
+  margin-left: 35px;
+}
+
+  

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>UMC JoinPage</title>
+	<link href="UMC JoinPage.css" rel="stylesheet" >
+   
+</head>
+
+
+<body>
+	<form id="Joinbox">
+	<div class="Join">
+		<h6>&nbsp;</h6>
+		<p><h1>회원 가입</h1></p>
+		<hr style ="color:white">
+		<br/>
+	
+		<fieldset style="border: none">
+            <p style="line-height: 0px; text-indent: -205px; color: white">이름</p>
+			<input type="text" name="username" id="username">
+        </fieldset>
+
+        <div class="success-name hide" style="font-size: xx-small; text-indent: -150px; color: greenyellow;">멋진 이름이네여!</div>
+        <div class="failure-name hide" style="font-size: xx-small; text-indent: -132px; color:rgb(255, 98, 98);">필수 입력 항목입니다!</div>
+        
+        <fieldset style="border: none">
+            <p style="line-height: 0px; text-indent: -180px;color: white">닉네임</p>
+            <input type="text" name="nickname" id="nickname">
+        </fieldset>
+        <div class="success-nickname hide" style="font-size: xx-small; text-indent: -132px; color: greenyellow;">귀여운 닉네임 입니다!</div>
+        <div class="failure-nickname hide" style="font-size: xx-small; text-indent: -85px;color:rgb(255, 98, 98);">닉네임은 2~5글자이어야 합니다</div>
+
+        <fieldset style="border: none">
+            <p style="line-height: 0px; text-indent: -180px;color: white">이메일</p>
+            <input type="email" name="email" id="email">
+        </fieldset>
+
+        <div class="success-email hide"style="font-size: xx-small; text-indent: -125px; color: greenyellow;">올바른 메일 형식입니다!</div>
+        <div class="failure-email hide"style="font-size: xx-small; text-indent: -95px;color:rgb(255, 98, 98);">올바른 메일 형식이 아닙니다!</div>
+
+        <fieldset style="border: none">
+            <p style="line-height: 0px; text-indent: -163px;color: white">비밀번호</p>
+            <input type="password" name="password" id="password">
+        </fieldset>
+
+        <div class="success-pw hide"style="font-size: xx-small; text-indent: -130px;color: greenyellow;">안전한 비밀번호입니다!</div>
+        <div class="failure-pw hide"style="font-size: xx-small; text-indent: -20px;color:rgb(255, 98, 98);">영문+숫자+특수문자를 조합하여 작성해주세요</div>
+       
+        <fieldset style="border: none">
+            <p style="line-height: 0px; text-indent: -125px;color: white">비밀번호 확인</p>
+            <input type="password" name="password-check" id="password-check"><br/>
+        </fieldset>
+
+        <div class="success-pwCheck hide"style="font-size: xx-small; text-indent: -140px;color: greenyellow;">비밀번호 일치 ㅇㅇ</div>
+        <div class="failure-pwCheck hide"style="font-size: xx-small; text-indent: -190px;color:rgb(255, 98, 98);">비번다름!</div>
+       
+        <br/>
+		
+         <button class="joinButton">회원가입</button>
+       
+
+     <div class="modal" style="display:none;">
+        <h2 class="modal__title">가입 성공!</h2>
+        <h5 class="modal__context">UMC 챌린저 가입을 축하합니다!</h5>
+            <div class="modal__actions">
+                <button class="closebutton">
+                    닫기
+                </button>
+            </div>
+    </div>
+<script src="UMC JoinPage.js"></script>
+</body>
+</html>
