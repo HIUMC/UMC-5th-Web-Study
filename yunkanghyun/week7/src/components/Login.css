@@ -44,22 +44,6 @@
       border-top: 1px solid #d8d8d8;
       margin: 50px auto;
   }
-  .loginbtnOn {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 30px;
-      width: 100%;
-      height: 54px;
-      border: 0;
-      border-radius: 30px;
-      background-color: #fe630a;
-      font-size: 14pt;
-      font-weight: 1000;
-      color: #fff;
-      cursor: pointer;
-      font-family: 'NanumSquare';
-  }
   .loginbtn {
       display: flex;
       justify-content: center;
@@ -79,7 +63,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 30px;
     width: 100%;
     height: 54px;
     border: 0;
@@ -90,7 +73,7 @@
     color: #fff;
     cursor: pointer;
     font-family: 'NanumSquare';
-}
+    }
   .goPage {
       display: flex;
       margin: 25px auto 0px;
