@@ -4,8 +4,6 @@ const IMG_BASE_URL = "https://image.tmdb.org/t/p/w1280/";
 const MovieDetail = () => {
 
   const location = useLocation();
-
-
   const { query } = useParams();
   const { poster_path } = location.state || {};
 
