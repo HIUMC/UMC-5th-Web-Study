@@ -1,22 +1,38 @@
 import React, { useState } from 'react';
-import './Login.css'; // Import your CSS file
+import './Login.css';
+import LoginButton from './LoginButton';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [user, setUser] = useState({
     id: '',
     password: '',
   });
+  const [isCredentialsValid, setIsCredentialsValid] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (user.id === '') {
-      alert('아이디를 입력해주세요.');
-      return;
-    }
-    if (user.password === '') {
-      alert('비밀번호를 입력해주세요.');
-      return;
-    }
-    alert('로그인 성공!');
+      if (user.id === '') {
+        alert('아이디를 입력해주세요.');
+        return;
+      }
+      if (user.password === '') {
+        alert('비밀번호를 입력해주세요.');
+        return;
+      }
+      alert('로그인 성공!');
+
+    setIsCredentialsValid(true);
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const goToLoginPage = () => {
+    navigate('/login');
   };
 
   return (
@@ -47,13 +63,27 @@ const Login = () => {
             />
           </div>
           <div className="line"></div>
-          <button onClick={handleLogin} type="button" className="loginbtn">
-            로그인
-          </button>
+          <LoginButton
+            onClick={handleLogin}
+            onLoginSuccess={goToLoginPage}
+            isCredentialsValid={isCredentialsValid}
+          />
         </div>
       </div>
+
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>
+              &times;
+            </span>
+            <p>로그인 성공!</p>
+          </div>
+        </div>
+      )}
     </>
   );
 };
 
 export default Login;
+
