@@ -1,19 +1,16 @@
 // Header.jsx
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
   const navigate = useNavigate();
   const goToHome = () => {
-    navigate('/');
+    navigate('/home');
   };
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  const handleLoginToggle = () => {
-    setIsLoggedIn(!isLoggedIn);
-    navigate('/'); // 로그인 버튼 클릭 시 로그인 페이지로 이동
+  const goToLogin = () => {
+        navigate('/'); // 로그인 버튼 클릭 시 로그인 페이지로 이동
   };
 
   return (
@@ -44,11 +41,11 @@ const Header = () => {
           </div>
         </div>
 
-        <button className="login-button" onClick={handleLoginToggle}>
-          {isLoggedIn ? '로그아웃' : '로그인'}
+        <button className="login-button" onClick={goToLogin}>
+        로그아웃
         </button>
         <div style={{ color: 'white' }}>
-          {isLoggedIn ? '환영합니다!' : '로그인 해주세요!'}
+          환영합니다!
         </div>
       </div>
     </div>
