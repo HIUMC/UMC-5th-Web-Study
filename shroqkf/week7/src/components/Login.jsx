@@ -13,7 +13,7 @@ const Login = () => {
   const navigate = useNavigate();
 
   const handleLogin = () => {
-      if (user.id === '') {
+      if (user.id === '') { // ==은 값만 똑같으면 true, js에서는 === 으로 값이랑 type까지 같은지 확인하는 것. === 을 더 많이 사용함.
         alert('아이디를 입력해주세요.');
         return;
       }
@@ -22,7 +22,6 @@ const Login = () => {
         return;
       }
       alert('로그인 성공!');
-
     setIsCredentialsValid(true);
     setIsModalOpen(true);
   };
@@ -32,7 +31,7 @@ const Login = () => {
   };
 
   const goToLoginPage = () => {
-    navigate('/login');
+    navigate('/home');
   };
 
   return (
