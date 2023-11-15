@@ -1,5 +1,5 @@
 import { useNavigate, Link } from "react-router-dom";
-import React, { useState } from 'react';
+import React, {  } from 'react';
 import "./Header.css";
 const Header = () => {
 
@@ -8,9 +8,8 @@ const Header = () => {
     navigate("/home");
   };
 
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const handleClick = () => {
-    setIsLoggedIn(!isLoggedIn);
+    navigate('/')
   };
 
   return (
@@ -29,10 +28,10 @@ const Header = () => {
         </div>
 
         <button className="login-button" onClick={handleClick}>
-          {isLoggedIn ? '로그인' : '로그아웃'}
+          { '로그아웃'}
         </button> 
         <div style={{color:"white"}}>
-          {isLoggedIn ? '로그인 해주세요!' : '환영합니다!'}
+          { '환영합니다!'}
         </div>
 
       </div>
