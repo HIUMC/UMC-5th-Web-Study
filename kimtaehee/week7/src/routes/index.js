@@ -18,7 +18,6 @@ const RootRoute = () => {
                 <Route path='/tv' element={<TV/>} />
                 <Route path='/person' element={<Person/>} />
                 <Route path="/movie/:query" element={<MovieDetail/>} />
-                <Route path='/login' element={<Login />} />
                 <Route path='/header' element={<Header />} />
 
             </Routes>

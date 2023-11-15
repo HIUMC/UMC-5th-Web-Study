@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css'; // Import your CSS file
 
 const Login = () => {
@@ -7,6 +8,7 @@ const Login = () => {
     password: '',
   });
 
+  const navigate = useNavigate();
   const handleLogin = () => {
     if (user.id === '') {
       alert('아이디를 입력해주세요.');
@@ -16,7 +18,8 @@ const Login = () => {
       alert('비밀번호를 입력해주세요.');
       return;
     }
-    alert('로그인 성공!');
+    alert('로그인 ' +user.id+ '님 성공!');
+    navigate('/home');
   };
 
   return (
