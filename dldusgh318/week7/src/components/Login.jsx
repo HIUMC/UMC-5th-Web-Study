@@ -1,38 +1,34 @@
-import React, { useState } from 'react';
-import './Login.css';
-import LoginButton from './LoginButton';
+import React, { useState,useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Login.css'; // Import your CSS file
 
 const Login = () => {
   const [user, setUser] = useState({
     id: '',
     password: '',
   });
-  const [isCredentialsValid, setIsCredentialsValid] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+
   const navigate = useNavigate();
+  const [button,setButton]=useState('loginbtn');
 
   const handleLogin = () => {
-      if (user.id === '') { // ==은 값만 똑같으면 true, js에서는 === 으로 값이랑 type까지 같은지 확인하는 것. === 을 더 많이 사용함.
-        alert('아이디를 입력해주세요.');
-        return;
-      }
-      if (user.password === '') {
-        alert('비밀번호를 입력해주세요.');
-        return;
-      }
+    if (user.id === '') {
+      alert('아이디를 입력해주세요.');
+      return;
+    }
+    if (user.password === '') {
+      alert('비밀번호를 입력해주세요.');
+      return;
+    }
+    setButton('loginbtnOn');
+
+    if(button==='loginbtnOn'){
       alert('로그인 성공!');
-    setIsCredentialsValid(true);
-    setIsModalOpen(true);
-  };
+      navigate("/home");
+    }
+    
+};
 
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
-  const goToLoginPage = () => {
-    navigate('/home');
-  };
 
   return (
     <>
@@ -62,27 +58,13 @@ const Login = () => {
             />
           </div>
           <div className="line"></div>
-          <LoginButton
-            onClick={handleLogin}
-            onLoginSuccess={goToLoginPage}
-            isCredentialsValid={isCredentialsValid}
-          />
+          <button onClick={handleLogin} type="button" className={button}>
+            로그인
+          </button>
         </div>
       </div>
-
-      {isModalOpen && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={closeModal}>
-              &times;
-            </span>
-            <p>로그인 성공!</p>
-          </div>
-        </div>
-      )}
     </>
   );
 };
 
 export default Login;
-
