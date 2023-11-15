@@ -31,7 +31,7 @@ const Login = () => {
     navigate('/login');
   };
 
-  const isInputValid = user.id.length > 0 && user.password.length > 0;
+  const loginbuttonOn = user.id.length > 0 && user.password.length > 0;
 
 
   return (
@@ -62,11 +62,12 @@ const Login = () => {
             />
           </div>
           <div className="line"></div>
+
           <button onClick={handleLogin} 
                   type="button" 
                   className="loginbtn" 
-                  style={{ backgroundColor: isInputValid ? 'orange' : 'gray' }}
-                  disabled={!isInputValid}
+                  style={{ backgroundColor: loginbuttonOn ? 'orange' : 'gray' }}
+                  disabled={!loginbuttonOn}
                   >
             로그인
           </button>

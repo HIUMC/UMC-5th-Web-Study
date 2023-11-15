@@ -5,20 +5,13 @@ const Header = () => {
 
   const navigate = useNavigate();
   const goToHome = () => {
-    navigate("/");
+    navigate("/home");
   };
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
- const handleClick = () => {
-  setIsLoggedIn(!isLoggedIn);
-  
-  if (isLoggedIn) {
-    navigate('/');
-  } 
-  else {
-    navigate('/login');
-  }
+ const goToLogin = () => {
+  navigate("/");
 };
 
   return (
@@ -36,11 +29,11 @@ const Header = () => {
           <div className="person"><Link to="/person" style={{ textDecoration: "none" , color:"white"}}>인물</Link></div>
         </div>
 
-        <button className="login-button" onClick={handleClick}>
-          {isLoggedIn ? '로그인' : '로그아웃'}
+        <button className="login-button" onClick={goToLogin}>
+          로그아웃
         </button> 
         <div style={{color:"white"}}>
-          {isLoggedIn ?  '로그인 해주세요!': '환영합니다!'}
+         환영합니다!
         </div>
 
       </div>
