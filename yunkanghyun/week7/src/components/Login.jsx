@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Login.css'; // Import your CSS file
 
 const Login = () => {
@@ -6,6 +7,8 @@ const Login = () => {
     id: '',
     password: '',
   });
+  const navigate = useNavigate();
+
 
   const handleLogin = () => {
     if (user.id === '') {
@@ -17,7 +20,9 @@ const Login = () => {
       return;
     }
     alert('로그인 성공!');
+    navigate('/home');
   };
+  const loginbtnOn = ( !(user.id === '') && !(user.password === ''));
 
   return (
     <>
@@ -47,9 +52,18 @@ const Login = () => {
             />
           </div>
           <div className="line"></div>
-          <button onClick={handleLogin} type="button" className="loginbtn">
-            로그인
-          </button>
+
+          {loginbtnOn
+          ?
+            <button onClick={handleLogin} type="button" className="loginbtnOn">
+              로그인
+            </button>
+          :
+            <button onClick={handleLogin} type="button" className="loginbtn">
+              로그인
+            </button>
+          }
+          
         </div>
       </div>
     </>
