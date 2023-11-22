@@ -8,8 +8,6 @@ const Login = () => {
     password: '',
   });
   const navigate = useNavigate();
-
-
   const handleLogin = () => {
     if (user.id === '') {
       alert('아이디를 입력해주세요.');
@@ -55,7 +53,7 @@ const Login = () => {
 
           {loginbtnOn
           ?
-            <button onClick={handleLogin} type="button" className="loginbtnOn">
+            <button onClick={handleLogin} type="button" className= "loginbtnOn">
               로그인
             </button>
           :
