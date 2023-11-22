@@ -12,15 +12,9 @@ function App() {
   const searchWeather = async (e) => {
     if(e.key === 'Enter') {
       try {
-        const data = await axios.get(url);
+        const data = await axios.get(url); //await을 써야 동기처리가 됨. 지연되게 해서 data가져오는 시간동안 기다리게 해야함
         console.log(data);
         setResult(data);
-        
-        /*axios.get(url).then((setResult)=>{
-          console.log(setResult.data);
-        })/*.catch((Error)=>{
-          console.log(Error);
-        })*/
 
         /*
         const data 에 axios 를 활용하여 url 을 get 하는 코드를 작성하고
@@ -48,10 +42,11 @@ function App() {
         />
         {Object.keys(result).length !== 0 && (
           <ResultWrap>
-            <div className="city">{result.data.name}</div>
+            <div className="city">{result.data.name}, {result.data.sys.country}</div>
             <div className="temperature">
               {Math.round((result.data.main.temp - 273.15) * 10) / 10}°C
             </div>
+            <div className='seupdo'>습도는 {result.data.main.humidity}%입니다.</div>
             <div className="sky">{result.data.weather[0].main}</div>
           </ResultWrap>
         )}
