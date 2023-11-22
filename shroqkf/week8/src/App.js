@@ -11,6 +11,7 @@ function App() {
     if(e.key === 'Enter') {
       try {
        const data = await axios.get(url);
+       console.log(data);
        setResult(data);
       } 
       catch(err) {
@@ -27,14 +28,16 @@ function App() {
           value={location}
           onChange={(e) => setLocation(e.target.value)}
           type="text"
-          onKeyDown={searchWeather}
+          onKeyDown={searchWeather} //searchWeather라는 함수를 입력했을 때 enter가 입력되면 실행
         />
         {Object.keys(result).length !== 0 && (
           <ResultWrap>
             <div className="city">{result.data.name}</div>
             <div className="temperature">
+            {/* OpenWeatherMap API를 통해 받아오는 온도 data의 경우는 화씨 온도입니다. 아래는 이를 섭씨 온도로 변환하는 코드 */}
               {Math.round((result.data.main.temp - 273.15) * 10) / 10}°C
             </div>
+            <div className="wind">{result.data.wind.speed} m/s</div>
             <div className="sky">{result.data.weather[0].main}</div>
           </ResultWrap>
         )}
