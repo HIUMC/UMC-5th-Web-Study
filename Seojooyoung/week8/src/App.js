@@ -20,7 +20,10 @@ function App() {
         윗말이 이해안되면 axios 사용법 구글링 하든 gpt를 사용하든 해서 코드를 작성해보세요~
         */
 
-        const data = await axios.get(url);
+        const data = await axios.get(url); // or <axios.get(url).then;>
+        // await(동기처리)를 안 하면 axios를 사용해서 data를 get해오기 전에(get 해오는 시간이 오래 걸림) 다음에서 data를 사용하려고 하기 때문에 실행이 안 됨.
+        // await을 쓰려면 12줄의 async를 써야 함.
+        
         setResult(data);
         console.log(data); // 데이터 확인을 위한 콘솔 로그
       } 
@@ -43,10 +46,12 @@ function App() {
         {Object.keys(result).length !== 0 && (
           <ResultWrap>
             <div className="city">{result.data.name}</div>
+            <div className="city-code">국가코드 {result.data.sys.country}</div>
             <div className="temperature">
               {Math.round((result.data.main.temp - 273.15) * 10) / 10}°C
             </div>
             <div className="humidity">습도는 {result.data.main.humidity}%입니다.</div>
+            <div></div>
             <div className="sky">{result.data.weather[0].main}</div>
           </ResultWrap>
         )}
@@ -95,6 +100,12 @@ const ResultWrap = styled.div`
     margin-top: 8px;
   }
   .humidity {
+    font-size: 15px;
+    text-align: left;
+    margin-top: 8px;
+  }
+
+  .city-code {
     font-size: 15px;
     text-align: left;
     margin-top: 8px;
