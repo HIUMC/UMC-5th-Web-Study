@@ -5,7 +5,7 @@ import styled from 'styled-components';
 function App() {
   const [location, setLocation] = useState('');
   const [result, setResult] = useState({});
-  const API_KEY = " 이곳에 본인 API 키 입력 "; // 각자 개인의 API KEY를 발급받아 사용해주세요. 
+  const API_KEY = "405069bd51c6e1db30bd870ca96c970d"; // 각자 개인의 API KEY를 발급받아 사용해주세요. 
   // 방법 : Open Weather Map API 가입 후 API_KEY 발급 받기
 
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`;
@@ -19,6 +19,13 @@ function App() {
         
         윗말이 이해안되면 axios 사용법 구글링 하든 gpt를 사용하든 해서 코드를 작성해보세요~
         */
+        const data = await axios.get(url)
+        
+        console.log(data);
+        setResult(data);
+        if(data.status===200){
+          alert('success');
+        }
       } 
       catch(err) {
         alert(err);
@@ -42,6 +49,7 @@ function App() {
             <div className="temperature">
               {Math.round((result.data.main.temp - 273.15) * 10) / 10}°C
             </div>
+            <div>{result.data.wind.speed} m/s</div>
             <div className="sky">{result.data.weather[0].main}</div>
           </ResultWrap>
         )}

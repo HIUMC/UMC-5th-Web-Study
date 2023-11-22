@@ -13,12 +13,12 @@ const RootRoute = () => {
             <Header/>
             <Routes>
                 <Route path='/' element={<Login/>}/>
+                <Route path='/login' element={<Login/>}/>
                 <Route path='/home' element={<Home/>}/>
                 <Route path='/movie' element={<Movie/>} />
                 <Route path='/tv' element={<TV/>} />
                 <Route path='/person' element={<Person/>} />
                 <Route path="/movie/:query" element={<MovieDetail/>} />
-
             </Routes>
         </BrowserRouter>
     )
