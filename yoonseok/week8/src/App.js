@@ -5,26 +5,32 @@ import styled from 'styled-components';
 function App() {
   const [location, setLocation] = useState('');
   const [result, setResult] = useState({});
-  const API_KEY = " 이곳에 본인 API 키 입력 "; // 각자 개인의 API KEY를 발급받아 사용해주세요. 
+  const API_KEY = "8fe206d1ecf9d9ceda88327a090a7a89"; // 각자 개인의 API KEY를 발급받아 사용해주세요. 
   // 방법 : Open Weather Map API 가입 후 API_KEY 발급 받기
 
-  const url =`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${API_KEY}`;
   const searchWeather = async (e) => {
     if(e.key === 'Enter') {
       try {
-        /*
-        const data 에 axios 를 활용하여 url 을 get 하는 코드를 작성하고
-        위에 본인이 작성한 코드의 data 를 setResult의 값으로 넣기.
-        data가 잘 뜨는지 확인을 위해선 console.log(data); 로 console확인. 콘솔 확인법은 구글링 해볼것.
-        
-        윗말이 이해안되면 axios 사용법 구글링 하든 gpt를 사용하든 해서 코드를 작성해보세요~
-        */
+        const response = await axios.get(url);
+        const { name, main, weather, wind, sys } = response.data;
+        const formattedData = {
+          city: name,
+          temperature: Math.round((main.temp - 273.15) * 10) / 10,
+          weather: weather[0].main,
+          windSpeed: wind.speed,
+          windDirection: wind.deg,
+          country: sys.country,
+        };
+        setResult(formattedData);
+        console.log(formattedData); // 콘솔에 데이터 출력
       } 
-      catch(err){
+      catch(err) {
         alert(err);
       }
     }
   }
+
 
   return (
     <AppWrap>
@@ -38,13 +44,15 @@ function App() {
         />
         {Object.keys(result).length !== 0 && (
           <ResultWrap>
-            <div className="city">{result.data.name}</div>
-            <div className="temperature">
-              {Math.round((result.data.main.temp - 273.15) * 10) / 10}°C
+            <div className="city">도시: {result.city}</div>
+            <div className="temperature">기온: {Math.round(result.temperature * 10) / 10}°C</div>
+            <div className="detail-info">
+              <div>풍속: {result.windSpeed} m/s, 풍향: {result.windDirection}°</div>
             </div>
-            <div className="sky">{result.data.weather[0].main}</div>
+            <div className="sky">날씨: {result.weather}</div>
           </ResultWrap>
         )}
+
       </div>
     </AppWrap>
   );
@@ -73,18 +81,23 @@ const AppWrap = styled.div`
 
 const ResultWrap = styled.div`
   margin-top: 60px;
-  border: 1px black solid;
-  padding: 10px;
+  border: 2px black solid;
+  padding: 30px;
   border-radius: 8px;
 
   .city {
-    font-size: 24px;
+    font-size: 20px;
   }
   .temperature {
-    font-size: 60px;
+    font-size: 40px;
     margin-top: 8px;
   }
   .sky {
+    font-size: 20px;
+    text-align: right;
+    margin-top: 8px;
+  }
+  .detail-info{
     font-size: 20px;
     text-align: right;
     margin-top: 8px;
