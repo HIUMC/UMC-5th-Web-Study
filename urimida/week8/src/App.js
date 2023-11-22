@@ -20,7 +20,10 @@ function App() {
           weather: weather[0].main,
           windSpeed: wind.speed,
           windDirection: wind.deg,
+          humidity: main.humidity, // 습도 추가
           country: sys.country,
+          iconCode: weather[0].icon, // 아이콘 코드 추가
+      
         };
         setResult(formattedData);
         console.log(formattedData); // 콘솔에 데이터 출력
@@ -48,6 +51,14 @@ function App() {
             <div className="temperature">기온: {Math.round(result.temperature * 10) / 10}°C</div>
             <div className="detail-info">
               <div>풍속: {result.windSpeed} m/s, 풍향: {result.windDirection}°</div>
+              <div>습도: {result.humidity}%</div>
+              <div>국가 코드: {result.country}</div>
+              {result.iconCode && (
+                <img
+                  src={`https://openweathermap.org/img/wn/${result.iconCode}.png`}
+                  alt="weather icon"
+                />
+              )}
             </div>
             <div className="sky">날씨: {result.weather}</div>
           </ResultWrap>
