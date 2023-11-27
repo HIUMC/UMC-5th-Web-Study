@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useState } from 'react';
 import styled from 'styled-components';
 
-
 function App() {
   const [location, setLocation] = useState('');
   const [result, setResult] = useState({});
