@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
@@ -10,6 +10,15 @@ const Login = () => {
   });
   const loginbtnOn = ( !(user.id === '') && !(user.password === ''));
   const navigate = useNavigate();
+
+  // token값이 있다면, 자동 로그인이 되는 코드
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+
+    if (storedToken) {
+      navigate('/home');
+    }
+  }, [navigate]);
  
   const handleLogin = () => {
     const requestData = {
@@ -19,25 +28,25 @@ const Login = () => {
       id: user.id,
       pw: user.password,
     };
-  
+
     axios.post('http://localhost:8000/user/login', requestData, {
       headers: {
         'Content-Type': 'application/json',
       },
     })
-      .then(result => {
-        console.log('로그인 성공 결과:', result.data); //콘솔로 어떤 데이터를 받는지 확인
-        if (result.data.code===2000) {
-          alert(result.data.message);
-          console.log(result.data.result.AccessToken); //AccessToken 값은 제가 찾아서 써놨어요
+      .then(response => {
+        console.log('로그인 성공 결과:', response.data); //콘솔로 어떤 데이터를 받는지 확인
+        if (response.data.code===2000) {
+          alert(response.data.message);
+          console.log(response.data.result.AccessToken); //AccessToken 값은 제가 찾아서 써놨어요
           //console.log( 이곳에 userId 위치를 잘 찾아서 위의 형식으로 적기 ); //콘솔을 통해 직접 찾아보세요
-          console.log(user.id);
-          localStorage.setItem('token', result.data.result.AccessToken);
+          console.log(response.data.result.userId);
+          localStorage.setItem('token', response.data.result.AccessToken);
           //localStorage.setItem('id', 이곳에 userId 위치를 잘 찾아서 위의 형식으로 적기 );
-          localStorage.setItem('id', result.data.result.userId);
+          localStorage.setItem('id', response.data.result.userId);
           navigate('/home');
         } else {
-          alert(result.data.message);
+          alert(response.data.message);
         }
       })
       .catch(error => {
