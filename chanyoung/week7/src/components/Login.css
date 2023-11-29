@@ -1,0 +1,123 @@
+.gray-background{
+    position: fixed;
+    z-index: 1;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: #e1e1e1;
+  }
+  .main-container{
+      display: flex;
+      width: 100%;
+      height: 98vh;
+      margin :auto;
+      font-family: 'NanumSquare';
+  }
+  .login-container {
+      z-index: 2;
+      margin: auto;
+      align-items: center;
+      padding: 60px 100px;
+      border: 2px solid #e1e2e3;
+      border-radius: 5%;
+      background-color: #fff;
+      text-align: center;
+  }
+  .login-logo{
+      margin-bottom: 60px;
+  }
+  .text-container{
+      margin-bottom: 30px;
+  }
+  .text-container input[type=text], .text-container input[type=password]{
+      width: 337px;
+      height: 36px;
+      padding-left: 15px;
+      border-radius: 20px;
+      border: 2px solid #cccccc;
+      background-color: #ffffff;
+      font-size: 11pt;
+      font-family: 'NanumSquare';
+  }
+  .line{
+      border-top: 1px solid #d8d8d8;
+      margin: 50px auto;
+  }
+  .loginbtnOn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 30px;
+      width: 100%;
+      height: 54px;
+      border: 0;
+      border-radius: 30px;
+      background-color: #fe630a;
+      font-size: 14pt;
+      font-weight: 1000;
+      color: #fff;
+      cursor: pointer;
+      font-family: 'NanumSquare';
+  }
+  .loginbtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 54px;
+      border: 0;
+      border-radius: 30px;
+      background-color: #c2c2c2;
+      font-size: 14pt;
+      font-weight: 1000;
+      color: #fff;
+      cursor: pointer;
+      font-family: 'NanumSquare';
+  }
+  .loginbtnOn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    width: 100%;
+    height: 54px;
+    border: 0;
+    border-radius: 30px;
+    background-color: #fe630a;
+    font-size: 14pt;
+    font-weight: 1000;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'NanumSquare';
+}
+  .goPage {
+      display: flex;
+      margin: 25px auto 0px;
+  }
+  .goPage li:first-child{
+      position: relative;
+      margin-right: 30px;
+  }
+  .goPage li:first-child:after {
+      content: '';
+      position: absolute;
+      right: -15px;
+      top: calc(50% - 8px);
+      display: block;
+      width: 1px;
+      height: 16px;
+      background: #a3a3a3;
+  }
+  .goPage li a {
+      font-size: 14px;
+      color: #9e917d;    
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  li {
+    list-style-type: none;
+  }
+  @import url('https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css');
