@@ -1,20 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
 
 const Login = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      navigate('/home');
+    }
+  }, [navigate]); // 빈 배열을 전달하여 컴포넌트가 처음 마운트될 때만 실행
+
+
   const [user, setUser] = useState({
     id: '',
     password: '',
   });
   const loginbtnOn = ( !(user.id === '') && !(user.password === ''));
-  const navigate = useNavigate();
+
  
   const handleLogin = () => {
     const requestData = {
-      //post 하는 아이디와 비번 형식은 { id : "umcweb", pw : "1234" } 이어야 한다.
-      //이때 보내는 값으로는 아래에서 입력받은 user.id와 user.password를 사용한다.
+      id: user.id, 
+      pw: user.password
     };
   
     axios.post('http://localhost:8000/user/login', requestData, {
@@ -27,9 +36,9 @@ const Login = () => {
         if (result.data.code===2000) {
           alert(result.data.message);
           console.log(result.data.result.AccessToken); //AccessToken 값은 제가 찾아서 써놨어요
-          //console.log( 이곳에 userId 위치를 잘 찾아서 위의 형식으로 적기 ); //콘솔을 통해 직접 찾아보세요
+          console.log(result.data.result.userId); //콘솔을 통해 직접 찾아보세요
           localStorage.setItem('token', result.data.result.AccessToken);
-          //localStorage.setItem('id', 이곳에 userId 위치를 잘 찾아서 위의 형식으로 적기 );
+          localStorage.setItem('id', result.data.result.userId);
           navigate('/home');
         } else {
           alert(result.data.message);

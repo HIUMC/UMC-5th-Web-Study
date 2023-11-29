@@ -1,13 +1,21 @@
 import { useNavigate, Link } from "react-router-dom";
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./Header.css";
 const Header = () => {
-
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token==null) {
+      navigate('/');
+    }
+  }, [navigate]); 
+
   const goToHome = () => {
     navigate("/home");
   };
   const goToLogin = () => {
+    localStorage.removeItem('token');
     navigate("/");
   };
 
