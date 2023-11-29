@@ -1,0 +1,31 @@
+.header-container {
+  background-color: rgb(0, 10, 153);
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px 40px;
+}
+.inner-container{
+  display: flex;
+  width: 700px;
+  justify-content: space-between;
+}
+.logo{
+  cursor: pointer;
+}
+.letter-frame{
+  color: white;
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.login-button {
+  background-color: #fff;
+  color:#000;
+  padding: 0px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+}
