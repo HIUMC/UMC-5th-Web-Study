@@ -30,10 +30,10 @@ const Login = () => {
           alert(result.data.message);
           console.log(result.data.result.AccessToken); //AccessToken 값은 제가 찾아서 써놨어요
           //console.log( 이곳에 userId 위치를 잘 찾아서 위의 형식으로 적기 ); //콘솔을 통해 직접 찾아보세요
-          console.log(user.id);
+          console.log(result.data.result.userId);
           localStorage.setItem('token', result.data.result.AccessToken);
           //localStorage.setItem('id', 이곳에 userId 위치를 잘 찾아서 위의 형식으로 적기 );
-          localStorage.setItem('id', user.id);
+          localStorage.setItem('id', result.data.result.userId);
           navigate('/home');
         } else {
           alert(result.data.message);
