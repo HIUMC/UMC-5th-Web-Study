@@ -13,8 +13,8 @@ const Login = () => {
  
   const handleLogin = () => {
     const requestData = {
-      id: "umcweb",
-      pw: "1234"
+      id: user.id,
+      pw: user.password
       //post 하는 아이디와 비번 형식은 { id : "umcweb", pw : "1234" } 이어야 한다.
       //이때 보내는 값으로는 아래에서 입력받은 user.id와 user.password를 사용한다.
     };
