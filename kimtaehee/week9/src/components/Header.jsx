@@ -1,13 +1,25 @@
 import { useNavigate, Link } from "react-router-dom";
-import React from 'react';
+import React, {useEffect} from 'react';
 import "./Header.css";
 const Header = () => {
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // 로컬스토리지에서 token 값을 가져오기
+    const token = localStorage.getItem('token');
+    
+    // token이 없으면 로그인페이지로 가라
+    if (token==null) {
+      navigate("/")
+    }
+  }, [navigate]);
+
   const goToHome = () => {
     navigate("/home");
   };
   const goToLogin = () => {
+    localStorage.removeItem('token'); // 로그아웃 누르면 토큰 삭제
     navigate("/");
   };
 

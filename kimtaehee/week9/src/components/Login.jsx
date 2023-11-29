@@ -1,15 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import axios from 'axios';
 
 const Login = () => {
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    // 로컬스토리지에서 token 값을 가져오기
+    const token = localStorage.getItem('token');
+    
+    // token 값이 존재하면 goToHome 함수 실행
+    if (token) {
+      navigate("/home")
+    }
+  }, [navigate]); // 처음 마운트될 때만 실행
+
   const [user, setUser] = useState({
     id: '',
     password: '',
   });
   const loginbtnOn = ( !(user.id === '') && !(user.password === ''));
-  const navigate = useNavigate();
  
   const handleLogin = () => {
     const requestData = {
