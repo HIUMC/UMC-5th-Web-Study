@@ -1,13 +1,24 @@
 import { useNavigate, Link } from "react-router-dom";
-import React from 'react';
+import React, { useEffect } from 'react';
 import "./Header.css";
 const Header = () => {
 
   const navigate = useNavigate();
+
+  // 토큰이 없으면 '/home'으로 이동할 수 없음 -> login 페이지로 이동하도록
+  useEffect(() => {
+    const storedToken = localStorage.getItem('token');
+
+    if (storedToken==null) {
+      navigate('/');
+    }
+  }, [navigate]);
+
   const goToHome = () => {
     navigate("/home");
   };
   const goToLogin = () => {
+    localStorage.removeItem('token'); //로그아웃 버튼을 눌렀을 때 token값을 삭제함
     navigate("/");
   };
 
